@@ -1,0 +1,25 @@
+{
+  "name": "Rasmin",
+  "description": "A rasberry pi webadmin panel",
+  "main": "bin/www",
+  "authors": [
+    "robinp7720 <robin@decker.cx>"
+  ],
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "keywords": [
+    "rasp",
+    "raspberrypi",
+    "admin",
+    "webadmin"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,131 @@
+extends ../layout
+
+block content
+    .row
+        .col-md-6
+            .panel.panel-default
+                .panel-heading
+                    h3.panel-title
+                        | /status/uptime
+                        span.label.label-info.pull-right GET
+
+                .panel-body
+                    p
+                        | Gets the system uptime
+                    h4 Example:
+                    pre
+                        | {
+                        |   "uptime": 102877.383444602
+                        | }
+            .panel.panel-default
+                .panel-heading
+                    h3.panel-title
+                        | /status/memory
+                        span.label.label-info.pull-right GET
+
+                .panel-body
+                    p
+                        | Gets the systems current memory usage
+                    h4 Example:
+                    pre
+                        | {
+                        |   "free": 14524416,
+                        |   "total": 970809344
+                        | }
+            .panel.panel-default
+                .panel-heading
+                    h3.panel-title
+                        | /status/cpu
+                        span.label.label-info.pull-right GET
+
+                .panel-body
+                    p
+                        | Gets information about each cpu
+                    h4 Example:
+                    pre
+                        | [{
+                        |   "model": "ARMv7 Processor rev 4 (v7l)",
+                        |   "speed": 1200,
+                        |   "times": {
+                        |     "user": 19714800,
+                        |     "nice": 100,
+                        |     "sys": 9234600,
+                        |     "idle": 927082400,
+                        |     "irq": 86600
+                        |   }
+                        | },
+                        | {
+                        |   "model": "ARMv7 Processor rev 4 (v7l)",
+                        |   "speed": 1200,
+                        |   "times": {
+                        |     "user": 12352700,
+                        |     "nice": 0,
+                        |     "sys": 4795400,
+                        |     "idle": 1014533800,
+                        |     "irq": 3500
+                        |   }
+                        | }]
+        .col-md-6
+            .panel.panel-default
+                .panel-heading
+                    h3.panel-title
+                        | /status/load
+                        span.label.label-info.pull-right GET
+
+                .panel-body
+                    p
+                        | Gets the average system load
+                    h4 Example:
+                    pre
+                        | {
+                        |   "load": [
+                        |     0.37646484375,
+                        |     0.328125,
+                        |     0.22802734375
+                        |   ]
+                        | }
+            .panel.panel-default
+                .panel-heading
+                    h3.panel-title
+                        | /status/hostname
+                        span.label.label-info.pull-right GET
+
+                .panel-body
+                    p
+                        | Gets the systems hostname
+                    h4 Example:
+                    pre
+                        | {
+                        |   "hostname": "raspberrypi"
+                        | }
+            .panel.panel-default
+                .panel-heading
+                    h3.panel-title
+                        | /status/network
+                        span.label.label-info.pull-right GET
+
+                .panel-body
+                    p
+                        | Gets information about avaliable network interfaces
+                    h4 Example:
+                    pre
+                        | {
+                        |  "eth0": [
+                        |     {
+                        |       "address": "192.168.178.50",
+                        |       "family": "IPv4",
+                        |       "internal": false
+                        |     },
+                        |     {
+                        |       "address": "2a02:908:f35c:e880:1a03:d67e:38:19e5",
+                        |       "family": "IPv6",
+                        |       "internal": false
+                        |     },
+                        |     {
+                        |       "address": "fe80::b893:f0e7:ca63:981d",
+                        |       "family": "IPv6",
+                        |       "internal": false
+                        |     }
+                        |   ]
+                        | }
+
