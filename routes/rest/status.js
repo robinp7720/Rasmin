@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var fs = require('fs');
+
 var os = require("os");
 
 var container = require('../../container');
@@ -32,6 +34,23 @@ router.get('/hostname', function(req, res, next) {
         hostname: os.hostname()
     });
 });
+
+router.put('/hostname', function(req, res, next) {
+    var fs = require('fs');
+    fs.writeFile("/etc/hostname", req.body.hostname, function(err) {
+        if(err) {
+            res.json({
+                error: err,
+                hostname: os.hostname()
+            });
+        } else {
+            res.json({
+                hostname: os.hostname()
+            });
+        }
+    });
+});
+
 
 router.get('/cpu', function(req, res, next) {
     res.json(os.cpus());
